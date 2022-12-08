@@ -1,0 +1,19 @@
+/* CSSで評価の☆を表示（ソース元：https://cortyuming.hateblo.jp/entry/2017/03/22/131457）*/
+
+.star-rating {
+	position: relative;
+	display:inline-block;
+	height: 1em;
+	width: 5em;
+	font-size: 50px;
+}
+
+.star-rating-front{
+	position: absolute;
+	color: #ffcc33; /* 星の色 */
+	overflow: hidden
+}
+
+.star-rating-back {
+	color: #c0c0c0; /* ベースの星の色 */
+}

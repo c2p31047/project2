@@ -1,0 +1,289 @@
+html{/* ------HTML全体に適応させる項目------ */
+       overflow-y: scroll;
+}
+body {/* ------bodyタグ全体に適応させる項目------ */
+       color: #5a5a5a;
+}
+h1{/* ------h1タグの項目------ */
+       font-size: 260%;
+}
+h3{/* ------h3タグの項目------ */
+       font-size: 25px;
+}
+a{/* ------aタグの項目------ */
+       color: #ff0018;
+}
+.heightext{/* ------スペース(大)の項目------ */
+       height: 2.5rem;
+}
+.heightext-thr{/* ------スペース(中)の項目------ */
+       height: 1rem;
+}
+.heightext-sec{/* ------スペース(小)の項目------ */
+       height: 0.2rem;
+}
+.conside{/* ------横スペースの項目------ */
+       padding-left: 2.5rem;
+       padding-right: 2.5rem;
+}
+#map_here {/* ------マップ表示の項目------ */
+    height: 350px;/* マップサイズ(横は可変するようにするため未指定。) */
+}
+.bd-placeholder-img {
+       font-size: 1.125rem;
+       text-anchor: middle;
+       -webkit-user-select: none;
+       -moz-user-select: none;
+       user-select: none;
+}
+@media (min-width: 768px) {
+       .bd-placeholder-img-lg {
+         font-size: 3.5rem;
+       }
+}
+hr{/* 仕切りラインの項目 */
+       opacity: .45;/* 透明度 */
+}
+footer{
+       background-color: #e5e5e5;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+       background-color: #f8f9fa;
+}
+.fb_iframe_widget{
+       margin: 0px;
+       padding: 0px;
+}
+.btn-group-sm>.btn, .btn-sm{
+       --bs-btn-padding-y: 0.2rem;
+       --bs-btn-padding-x: 0.55rem;
+
+}
+.btn-o{
+       border-radius: 10px;
+       margin-top: 20px;
+
+}
+.darkmode-ignore sns{
+      text-align: center;
+
+}
+.bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+}
+@media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+}
+
+.carousel {
+  margin-bottom: 4rem;
+}
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+.wid img{/* ------ホームの画像------ */
+  width: 110vw;
+  height: 80vh;
+  object-fit: cover;
+}
+.footer03 {
+ color: #808080;
+ background: #e5e5e5;
+ padding: 30px;
+}
+.footer03 a {
+ color: #808080;
+ text-decoration: none;
+}
+.footer03 a:hover {
+ text-decoration: underline;
+}
+.footer03 .menu {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ display: flex;
+ flex-wrap: wrap;
+}
+.footer03 .menu li {
+ margin: 0;
+ padding: 0 20px;
+ border-left: 1px #808080 solid;
+}
+.footer03 .menu li:first-child {
+ padding-left: 0;
+ border: none;
+}
+.footer03 .copyright {
+ margin: 0;
+ padding: 20px 0 0 0;
+}
+
+
+@media only screen and (max-width: 599px) {
+.footer03 .menu li {
+ width: 50%;
+ padding: 0 20px 0 0;
+ box-sizing: border-box;
+ border: none;
+}
+}
+
+.follow-me {
+  list-style: none;
+  margin: 0 0 -8px;
+  overflow: hidden;
+  padding: 0;
+}
+.follow-me li {
+  float: left;
+  margin: 0 8px 8px 0;
+  padding: 0;
+}
+.follow-me li a::before {
+  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 16px;
+  height: 42px; /* Button height */
+  line-height: 42px; /* Button height */
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 42px; /* Button width */
+}
+.follow-me li a[href*="amazon.co.jp"]::before,
+.follow-me li a[href*="amazon.com"]::before         { border-color: #ff9900; color: #ff9900; content: "\f270"; }
+.follow-me li a[href*="codepen.io"]::before         { border-color: #000000; color: #000000; content: "\f1cb"; }
+.follow-me li a[href*="delicious.com"]::before      { border-color: #3399ff; color: #3399ff; content: "\f1a5"; }
+.follow-me li a[href*="deviantart.com"]::before     { border-color: #05cc47; color: #05cc47; content: "\f1bd"; }
+.follow-me li a[href*="digg.com"]::before           { border-color: #000000; color: #000000; content: "\f1a6"; }
+.follow-me li a[href*="dribble.com"]::before        { border-color: #000000; color: #ea4c89; content: "\f17d"; }
+.follow-me li a[href*="dropbox.com"]::before        { border-color: #007ee5; color: #007ee5; content: "\f16b"; }
+.follow-me li a[href*="facebook.com"]::before       { border-color: #3b5998; color: #3b5998; content: "\f09a"; }
+.follow-me li a[href*="feedly.com"]::before         { border-color: #6cc655; color: #6cc655; content: "\f09e"; }
+.follow-me li a[href*="flickr.com"]::before         { border-color: #0063cc; color: #0063dc; content: "\f16e"; }
+.follow-me li a[href*="foursquare.com"]::before     { border-color: #f94877; color: #f94877; content: "\f180"; }
+.follow-me li a[href*="github.com"]::before         { border-color: #181717; color: #181717; content: "\f09b"; }
+.follow-me li a[href*="plus.google.com"]::before    { border-color: #dc4e41; color: #dc4e41; content: "\f0d5"; }
+.follow-me li a[href*="b.hatena.ne.jp"]::before     { border-color: #008fde; color: #008fde; content: "\f027"; font-family: blogicon; }
+.follow-me li a[href*="instagram.com"]::before      { border-color: #125688; color: #125688; content: "\f16d"; }
+.follow-me li a[href*="last.fm"]::before            { border-color: #d51007; color: #d51007; content: "\f202"; }
+.follow-me li a[href*="linkedin.com"]::before       { border-color: #0077b5; color: #0077b5; content: "\f0e1"; }
+.follow-me li a[href*="nicovideo.jp"]::before       { border-color: #eaeaea; color: #eaeaea; content: "\f047"; font-family: blogicon; }
+.follow-me li a[href*="pinterest.com"]::before      { border-color: #bd081c; color: #bd081c; content: "\f0d2"; }
+.follow-me li a[href*="getpocket.com"]::before      { border-color: #ef3f56; color: #ef3f56; content: "\f265"; }
+.follow-me li a[href*="reddit.com"]::before         { border-color: #ff4500; color: #ff4500; content: "\f1a1"; }
+.follow-me li a[href*="skype.com"]::before,
+.follow-me li a[href*="skype:"]::before             { border-color: #00aff0; color: #00aff0; content: "\f17e"; }
+.follow-me li a[href*="slideshare.net"]::before     { border-color: #2d2d2d; color: #2d2d2d; content: "\f1e7"; }
+.follow-me li a[href*="spotify.com"]::before        { border-color: #84bd00; color: #84bd00; content: "\f1bc"; }
+.follow-me li a[href*="steamcommunity.com"]::before { border-color: #171a21; color: #171a21; content: "\f1b6"; }
+.follow-me li a[href*="stumbleupon.com"]::before    { border-color: #eb4929; color: #eb4929; content: "\f1a4"; }
+.follow-me li a[href*="tumblr.com"]::before         { border-color: #36465d; color: #36465d; content: "\f173"; }
+.follow-me li a[href*="twitch.tv"]::before          { border-color: #6441a5; color: #6441a5; content: "\f1e8"; }
+.follow-me li a[href*="twitter.com"]::before        { border-color: #55acee; color: #55acee; content: "\f099"; }
+.follow-me li a[href*="vimeo.com"]::before          { border-color: #1ab7ea; color: #1ab7ea; content: "\f27d"; }
+.follow-me li a[href*="vine.co"]::before            { border-color: #11b58a; color: #11b58a; content: "\f1ca"; }
+.follow-me li a[href*="weibo.com"]::before          { border-color: #e6162d; color: #e6162d; content: "\f18a"; }
+.follow-me li a[href*="whatsapp.com"]::before       { border-color: #64d548; color: #64d548; content: "\f232"; }
+.follow-me li a[href*="wordpress.com"]::before,
+.follow-me li a[href*="wordpress.org"]::before      { border-color: #21759b; color: #21759b; content: "\f19a"; }
+.follow-me li a[href*="youtube.com"]::before        { border-color: #cd201f; color: #cd201f; content: "\f16a"; }
+.follow-me li a[href$="/feed"]::before              { border-color: #ffa500; color: #ffa500; content: "\f09e"; }
+.follow-me li a[href$="/subscribe"]::before         { border-color: #363636; color: #363636; content: "\f000"; font-family: blogicon; }
+.follow-me li a:hover::before {
+  color: #fff;
+}
+.follow-me li a[href*="amazon.co.jp"]:hover::before,
+.follow-me li a[href*="amazon.com"]:hover::before         { background-color: #ff9900; }
+.follow-me li a[href*="codepen.io"]:hover::before         { background-color: #000000; }
+.follow-me li a[href*="delicious.com"]:hover::before      { background-color: #3399ff; }
+.follow-me li a[href*="deviantart.com"]:hover::before     { background-color: #05cc47; }
+.follow-me li a[href*="digg.com"]:hover::before           { background-color: #000000; }
+.follow-me li a[href*="dribble.com"]:hover::before        { background-color: #ea4c89; }
+.follow-me li a[href*="dropbox.com"]:hover::before        { background-color: #007ee5; }
+.follow-me li a[href*="facebook.com"]:hover::before       { background-color: #3b5998; }
+.follow-me li a[href*="feedly.com"]:hover::before         { background-color: #6cc655; }
+.follow-me li a[href*="flickr.com"]:hover::before         { background-color: #0063dc; }
+.follow-me li a[href*="foursquare.com"]:hover::before     { background-color: #f94877; }
+.follow-me li a[href*="github.com"]:hover::before         { background-color: #181717; }
+.follow-me li a[href*="plus.google.com"]:hover::before    { background-color: #dc4e41; }
+.follow-me li a[href*="b.hatena.ne.jp"]:hover::before     { background-color: #008fde; }
+.follow-me li a[href*="instagram.com"]:hover::before      { background-color: #125688; }
+.follow-me li a[href*="last.fm"]:hover::before            { background-color: #d51007; }
+.follow-me li a[href*="linkedin.com"]:hover::before       { background-color: #0077b5; }
+.follow-me li a[href*="nicovideo.jp"]:hover::before       { background-color: #eaeaea; }
+.follow-me li a[href*="pinterest.com"]:hover::before      { background-color: #bd081c; }
+.follow-me li a[href*="getpocket.com"]:hover::before      { background-color: #ef3f56; }
+.follow-me li a[href*="reddit.com"]:hover::before         { background-color: #ff4500; }
+.follow-me li a[href*="skype.com"]:hover::before,
+.follow-me li a[href*="skype:"]:hover::before             { background-color: #00aff0; }
+.follow-me li a[href*="slideshare.net"]:hover::before     { background-color: #2d2d2d; }
+.follow-me li a[href*="spotify.com"]:hover::before        { background-color: #84bd00; }
+.follow-me li a[href*="steamcommunity.com"]:hover::before { background-color: #171a21; }
+.follow-me li a[href*="stumbleupon.com"]:hover::before    { background-color: #eb4929; }
+.follow-me li a[href*="tumblr.com"]:hover::before         { background-color: #36465d; }
+.follow-me li a[href*="twitch.tv"]:hover::before          { background-color: #6441a5; }
+.follow-me li a[href*="twitter.com"]:hover::before        { background-color: #55acee; }
+.follow-me li a[href*="vimeo.com"]:hover::before          { background-color: #1ab7ea; }
+.follow-me li a[href*="vine.co"]:hover::before            { background-color: #11b58a; }
+.follow-me li a[href*="weibo.com"]:hover::before          { background-color: #e6162d; }
+.follow-me li a[href*="whatsapp.com"]:hover::before       { background-color: #64d548; }
+.follow-me li a[href*="wordpress.com"]:hover::before,
+.follow-me li a[href*="wordpress.org"]:hover::before      { background-color: #21759b; }
+.follow-me li a[href*="youtube.com"]:hover::before        { background-color: #cd201f; }
+.follow-me li a[href$="/feed"]:hover::before              { background-color: #ffa500; }
+.follow-me li a[href$="/subscribe"]:hover::before         { background-color: #363636; }
+
+
+

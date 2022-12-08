@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ここにページのタイトルを入れる</title>
+  
+  <!-- CSSの設定（Bootstrap 5を利用する→部品の使い方は各自で調べること） -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- CSSの設定（演習ではcssフォルダのProA_style.cssを編集してクラスを設定すること） -->
+  <link rel="stylesheet" href="css/ProA_style.css">
+
+  <!-- lightbox2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css" rel="stylesheet">
+
+  <!-- 評価を☆で表す（https://cortyuming.hateblo.jp/entry/2017/03/22/131457 から作成） -->
+  <link rel="stylesheet" href="css/star-rating.css">
+
+</head>
+
+<body>
+  <!-- ページ上部に常時表示される部分にBootstrapのNavbarというコンポーネント（部品）を表示 -->
+  <!-- その他のメニューを使う場合は，https://bootstrap-guide.com/category/navbars 等を参照のこと-->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#">ProA 2022</a><!-- hrefのリンク先やテキストの部分は各チームで修正すること -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="ProA2022">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">フロントページ</a><!-- hrefのリンク先は各チームで修正すること -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./detail_example.html?id=1">パラメータidの番号で内容変更</a><!-- hrefのリンク先は各チームで修正すること -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">無効</a>
+            </li>
+            <li class="nav-item dropdown"><!-- カテゴリ別のメニュー項目を作る場合などに利用する．なお，hrefのリンク先は各チームで修正すること -->
+              <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">カテゴリ1</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./detail_example.html?id=1">カテゴリ内のページ1</a></li>
+                <li><a class="dropdown-item" href="./detail_example.html?id=2">カテゴリ内のページ2</a></li>
+                <li><a class="dropdown-item" href="./detail_example.html?id=3">カテゴリ内のページ3</a></li>
+                <!-- 適宜，カテゴリ内のページがあれば，個々に項目を追加（あるいは，削除）-->
+              </ul>
+            </li>
+          </ul>
+          
+          <form class="d-flex" role="search">
+            <input class="form-control me-2"  id="search_keyword" type="search" placeholder="検索..." aria-label="検索...">
+            <button class="btn btn-outline-success flex-shrink-0"  id="search_btn" type="submit">検索</button>
+          </form>
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" class="pt-5">
+	  <!-- ページの見出し -->
+    <div class="p-3 p-sm-5 mb-4 bg-img bg-head">
+      <div class="container">
+        <h1 class="display-4" id="top-title">サイトの名前が入ります</h1>
+        <p class="lead" id="top-abstract">ここには各ページの紹介が入ります（紹介は紹介対象の名前にするか，概要にするかは各チームで決める）</p>
+        <!-- <a class="btn btn-outline-primary btn-lg" href="#" role="button">リンク付きのボタン</a> -->
+      </div>
+    </div>
+
+    <!-- これ以降は，紹介対象を個別に紹介する内容（同じ内容で複数施設や複数の場所など）として，デザインは各チームで作成 -->
+    <!-- ただし，idの値を使ってdata.jsonに蓄積してある値を差し込むようにする仕組みの利用は，要求事項のため，厳守すること -->
+    <div class="container">
+      <div class="row m-3"><!-- 紹介対象の内容（ここから）-->
+        <div class="col-md-7">
+          <h2 class="pl-1 bg-lightblue">紹介対象の名前
+            <!-- <span class="text-muted">It'll blow your mind.</span> -->
+          </h2>
+          <p id="abstract" class="lead">概要説明（施設や場所の紹介文）</p>
+				  <p id="detail"> ここに詳細な説明を書き込んでいきます． </p>
+        </div>
+        <div class="col-md-5">
+          <img id="thumnail_img" class="img-fluid mx-auto box-shadow" src="./photos/thumnail_sample_300_thum.jpg" alt="画像の代替テキスト">
+        </div>
+      </div>
+
+      <div class="row m-3"><!-- 紹介対象の詳細（ここから）-->
+        <div class="img-fluid md-5 border-dashed box-shadow">
+          <h3 class="pl-3">追加の画像：</h3>
+          <!--（注：LightBox2のファイルがコピーされていなければ，別ページが開く，という動作になる．）-->
+          <div id="image_list">
+            <a href="./photos/thumnail_sample_300.jpg" data-lightbox="image-list">
+              <img src="./photos/thumnail_sample_300_thum.jpg" class="col-3 mb-5 box-shadow"/></a>
+          </div>
+
+          <!-- 評価の☆を表示する -->
+          <h3 class="pl-3">評価：</h3>
+
+          <div class="star-rating col-5 m-3 mb-5">
+            <!-- width: ○○%が☆5つに対する評価のパーセンテージ（例：4.5→90%） -->
+            <div class="star-rating-front" style="width: 95%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+          </div>
+
+          <!-- 地図の表示(JavaScript) -->
+          <h3 class="pl-3">場所：</h3>
+          <div id="map_here" class="col-5 m-5 mb-5">
+      	  </div>
+			  </div>
+		  </div><!-- 紹介対象の詳細（ここまで）-->
+      <div class="row">
+        <table class="table">
+          <thead><tr><th>ユーザ名</th><th>レビュー内容</th></tr></thead>
+          <tbody id="review_list"></tbody>
+        </table>
+      </div>
+    </div>
+    <p>
+      <div class="m-5 form-group"><!-- レビュー投稿欄（送信はjs/form_submit.jsで行う -->
+        <h3>レビューの投稿</h3><br />
+        <div class="input-group">
+          <!--  actionのURLは，掲示板機能を提供するWebAPIなので，変更の必要はありません -->
+          <form method="POST" action="https://athena.abe-lab.jp/~hidenao/ProA_2022/Project2_reviewAPI/review_reg.php">
+            ユーザ名：<input class="form-control input-lg" type="text" size="30" name="user_name" required><br />
+            評価：<select class="form-control input-lg" name="review_score" size="1" required>
+              <option value="5">☆☆☆☆☆</option>
+              <option value="4">☆☆☆☆　</option>
+              <option value="3">☆☆☆　　</option>
+              <option value="2">☆☆　　　</option>
+              <option value="1">☆　　　　</option>
+            </select><br />
+            評価コメント：<br />
+            <textarea class="form-control" name="review_text" cols="50" rows="5"></textarea><br />
+            <input type="hidden" name="obj_id" id="obj_id"><!-- ここに各オブジェクトの番号を記入する必要はありません-->
+            <input type="hidden" name="gid" id="gid" value="X"><!-- ※※ ここは各グループの記号に必ず変更すること ※※ -->
+            <input class="form-control" type="submit" value="送信">
+          </form>
+        </div>
+      </div>
+  </main>
+
+  <!-- フッターの表示 -->
+  <footer>
+    (C) All Right Reserved, 2015-2022, Infosys Project A 
+   </footer>
+	
+  <!-- JavaScriptのライブラリ（jQueryは基本ライブラリ+Bootstrap用のJavaScriptファイル） -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- lightbox2を表示するためのJavaScriptファイル -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" type="text/javascript">
+  </script>
+
+  <!-- 地図の表示(JavaScript) --><!-- leaflet.js+OpenStreet MapによるMapの表示 -->
+	<!-- headタグ内でCSSとLeafletを読み込む -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+  <!-- 詳細情報のデータをDBからJSONから読み取り -->
+  <script src="js/readJSON_detail.js"></script>
+
+  <!-- search_list.jsは，?q=でページを呼んで，検索結果を含む表示を作るようにする処理を行うJavaScriptファイル -->
+  <script src="js/search_list.js"></script>
+
+    <!-- レビューの送受信 -->
+	<script src="js/form_submit.js"></script><!-- フォームへの書き込みをAjaxで送信する -->
+  <script src="js/insert_review.js"></script><!-- レビューをページに読み込む(必ず，<input name="gid"...のvalueを各グループの記号としてください) -->
+
+</body>
+
+</html>
