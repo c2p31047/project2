@@ -15,7 +15,7 @@ $(function(){
 		//const json_url = "https://athena.abe-lab.jp/~hidenao/ProA_2022/Project2_example/data.json";
 		// data.jsonでの動作が確認できたら，↑の行をコメント（//を先頭に付ける）して，↓の行のコメント//を外す
 		//const json_url = "https://infosys-projecta-2022.github.io/2022-project2-f/data.json";
-		const json_url = "https://raw.githubusercontent.com/c2p31047/project2/main/docs/data.json";
+		const json_url = "https://raw.githubusercontent.com/c2p31087/data-im/main/data.json";
 
 
 		let id = 0; 

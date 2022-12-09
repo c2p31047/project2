@@ -95,7 +95,7 @@
             <div class="carousel-caption text-start">
               <h1>ようこそ</h1>
               <p>横浜市で新生活送るあなたをサポートします。(この画像は92行目)</p>
-              <p><a class="btn btn-lg btn-primary" href="#">詳しく</a></p>
+              <p><a class="btn btn-lg btn-primary" href=".det_fro">詳しく</a></p>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@
 
     <div class="container">
       <div class="p-2">
-        <h4><b>・概要</b></h4>
+        <h4 class="det_fro"><b>・概要</b></h4>
           <p>
              このサイトは</br>
              新春、横浜に引っ越してくる人が、行政サービスのことについて見れば困らないサービスを提供します。</br>
@@ -179,36 +179,43 @@
       </div>
 
 
-      <hr class="featurette-divider">
 
+      <div class="container">
+        <hr class="featurette-divider">
+        <div class="darkmode-ignore">
+          <div class="social">
+            <!-- ツイッターに共有 -->
+            <div class="Twi-box">
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                 class="twitter-share-button"
+                 data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js"
+                      charset="utf-8">
+              </script>
+            </div>
 
+            <!-- フェイスブックに共有 -->
+            <div class="Fb-box">
+              <div class="fb-share-button" 
+                   data-href="https://infosys-projecta-2022.github.io/2022-project2-f/index.html" 
+                   data-layout="button_count">
+              </div>
+            </div>
 
-     <div class="darkmode-ignore">
-       <!-- ツイッターに共有 -->
-           <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-              class="twitter-share-button"
-              data-size="small"
-              data-show-count="false">Tweet</a>
-           <script async src="https://platform.twitter.com/widgets.js"
-                   charset="utf-8">
-           </script>
+            <!-- LINEに共有 -->
+            <div class="Ln-box">
+              <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://infosys-projecta-2022.github.io/2022-project2-f/index.html" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
+              <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+            </div>
 
-           <!-- フェイスブックに共有 -->
-           <div class="fb-share-button" 
-                data-href="https://infosys-projecta-2022.github.io/2022-project2-f/index.html" 
-                data-layout="buttont">
-           </div>
+            <!-- クリップボードにコピーする -->
+            <input type="button" value="クリップボードにコピー" onclick="copyUrl()" class="btn btn-success btn-sm">
+          </div>
+        </div>
+        <hr class="featurette-divider">
+      </div>
+    </div>
 
-           <!-- LINEに共有 -->
-           <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://infosys-projecta-2022.github.io/2022-project2-f/index.html" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
-           <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-           <!-- クリップボードにコピーする -->
-           <input type="button" value="クリップボードにコピー" onclick="copyUrl()" class="btn btn-success btn-sm">
-     </div>
-
-       <hr class="featurette-divider">
-     </div>
-   </div>
 
   <!-- フッターの表示 -->
   <footer>
