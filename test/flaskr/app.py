@@ -29,8 +29,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@127.0.0.1:3306/{DB_NAME}'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@127.0.0.1:3306/{DB_NAME}'
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # 不要な警告を抑制
 db = SQLAlchemy(app)
