@@ -1,0 +1,124 @@
+/* 土台 */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* 全体 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header, footer, .sidebar, .content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header{
+    border-bottom: solid pink 10px;
+    height: 40px;
+}
+
+.sidebar {
+    flex-basis: 200px;
+}
+
+.content {
+    flex-grow: 1;
+    width: 500px;
+}
+
+.login-form, .signup-form {
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+  
+  h1 {    
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    text-align: left;
+  }
+  
+  #email,
+  #password {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* 追加 */
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .links {
+    margin: 10px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 10px;
+  }
+  
+
+/* リンク */
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 10px;
+
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: rgba(0, 148, 5, 0.733);
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: 10px;
+    background-color: #2eb8ff;
+    color: #fff;
+    padding: 10px 0;
+}
+
+#calendar {
+  max-width: 800px;
+  margin: 0 auto;
+}

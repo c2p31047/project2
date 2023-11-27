@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ location.location_name }}</title>
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-btKpDkQf8a4gPOGzrn8q8u5wA5d4l2pvsZzIz+MmR4L+XvcjbpZ2Xx3dJ5W5BlgC" crossorigin="anonymous">
+
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Your custom script.js -->
+    <script src="/static/js/script.js"></script>
+</head>
+<body>
+    <form method="GET" action="{{ url_for('index') }}">
+        <button type="submit" class="btn btn-secondary">インデックスに移動</button>
+    </form>
+    <div class="container mt-5">
+        <h1>予約ページ - {{ location.location_name }}</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div id="calendar" data-location-id="{{ location.id }}"></div>
+        <form method="POST" action="{{ url_for('location_page', location_name=location.location_name) }}">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <!-- タイトル -->
+            <div class="form-group">
+                {{ form.title.label(class="form-label") }}
+                {{ form.title(class="form-control", placeholder="予約タイトルを入力してください") }}
+            </div>
+            <!-- 開始日付 -->
+            <div class="form-group">
+                {{ form.start_date.label(class="form-label") }}
+                {{ form.start_date(class="form-control", id="start_date_picker", autocomplete="off") }}
+                {{ form.start_time.label(class="form-label") }}
+                {{ form.start_time(class="form-control", id="start_time_picker") }}
+            </div>
+
+            <!-- 終了日付 -->
+            <div class="form-group">
+                {{ form.end_date.label(class="form-label") }}
+                {{ form.end_date(class_="form-control", id="end_date_picker", autocomplete="off") }}
+                {{ form.end_time.label(class="form-label") }}
+                {{ form.end_time(class_="form-control", id="end_time_picker") }}
+            </div>
+            
+            <div class="form-group form-check">
+                {{ form.is_all_day(class="form-check-input", id="is_all_day_checkbox") }}
+                {{ form.is_all_day.label(class="form-check-label", for="is_all_day_checkbox") }}
+            </div>
+            
+            <input type="submit" name="submit" value="予約する" class="btn btn-primary">
+        </form>
+        <a href="{{ url_for('show_locations') }}">戻る</a>
+        <!-- 予約一覧表示 -->
+        <h2>予約一覧</h2>
+        {% if reservations %}
+            <ul>
+                {% for reservation in reservations %}
+                    <li>
+                        {{ reservation.title }} -
+                        {% if reservation.is_all_day %}
+                            終日
+                        {% else %}
+                            {{ reservation.start_datetime }} から {{ reservation.end_datetime }} まで
+                        {% endif %}
+                        {% if can_access %}
+                            <a href="{{ url_for('edit_reservation', location_name=location.location_name, reservation_id=reservation.id) }}">変更</a>
+                            <form method="POST" action="{{ url_for('delete_reservation', location_name=location.location_name, reservation_id=reservation.id) }}" style="display:inline;">
+                                <button type="submit" class="btn btn-link" onclick="return confirm('本当に削除しますか？')">削除</button>
+                            </form>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>予約はありません。</p>
+        {% endif %}
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

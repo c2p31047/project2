@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#map {
+    height: 400px;
+    margin: 20px auto;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+}
+
+#locationText {
+    text-align: center;
+}

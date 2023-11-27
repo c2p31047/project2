@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予約の追加</title>
+</head>
+<body>
+    <h1>予約の追加</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <label for="title">タイトル:</label>
+        {{ form.title(size=32) }}
+        <br>
+        <label for="start_date">開始日:</label>
+        {{ form.start_date() }}
+        <br>
+        <label for="start_time">開始時刻:</label>
+        {{ form.start_time() }}
+        <br>
+        <label for="end_date">終了日:</label>
+        {{ form.end_date() }}
+        <br>
+        <label for="end_time">終了時刻:</label>
+        {{ form.end_time() }}
+        <br>
+        <label for="is_all_day">終日:</label>
+        {{ form.is_all_day() }}
+        <br>
+        <input type="submit" value="予約する">
+    </form>
+
+    <br>
+    <a href="{{ url_for('index') }}">ホームに戻る</a>
+</body>
+</html>

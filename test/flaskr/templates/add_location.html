@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Location</title>
+    <!-- Bootstrap CDN のリンクを追加する -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-<INTEGRITY>" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Add Location</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="GET" action="{{ url_for('index') }}">
+            <button type="submit" class="btn btn-secondary">Go to Index</button>
+        </form>
+        <form method="POST" action="{{ url_for('add_location') }}">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.location_name.label }} {{ form.location_name }}
+            </div>
+            <div>
+                {{ form.floor.label }} {{ form.floor }}
+            </div>
+            <div>
+                <input type="submit" value="Add Location">
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

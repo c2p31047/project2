@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー設定</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- 追加のスタイルやスクリプトはここに追加してください -->
+</head>
+<body>
+    <form method="GET" action="{{ url_for('index') }}">
+        <button type="submit" class="btn btn-secondary">Go to Index</button>
+    </form>
+    <div class="container mt-5">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1>ユーザー設定</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            
+            <label for="current_username">現在のユーザー名：</label>
+            <input type="text" id="current_username" value="{{ current_user.username }}" disabled class="form-control">
+
+            <label for="username">新しいユーザー名：</label>
+            {{ form.username(class="form-control") }}
+
+            <label for="current_password">現在のパスワード：</label>
+            {{ form.current_password(class="form-control") }}
+
+            <label for="new_password">新しいパスワード：</label>
+            {{ form.new_password(class="form-control") }}
+
+            <label for="confirm_password">新しいパスワードの確認：</label>
+            {{ form.confirm_password(class="form-control") }}
+
+            <!--<label for="icon">アイコンをアップロード：</label>
+            {{ form.icon(class="form-control") }}-->
+
+            <div class="form-check">
+                {{ form.dark_mode(class="form-check-input") }}
+                <label class="form-check-label" for="dark_mode">ダークモード：</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">変更を保存</button>
+        </form>
+    </div>
+
+    <!-- ここに追加のコンテンツやスクリプトを追加してください -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+</body>
+</html>
